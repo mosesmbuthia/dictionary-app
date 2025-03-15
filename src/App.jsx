@@ -8,10 +8,13 @@ function App() {
   const [word, setWord] = useState("")
   const [loading, setLoading] = useState("false")
   const searchWord = async () => {
+    setLoading(true)
     try {
 
     } catch (e) {
       console.error(e);
+    } finally {
+      setLoading(false)
     }
 
     
@@ -23,7 +26,7 @@ function App() {
 
     <TextInput onChange={e => setWord(e.target.value)} value={word} placeholder='Enter a word to search'/>
 
-      <Button appearance='primary' onClick={searchWord} >Search</Button>
+      <Button appearance='primary' onClick={searchWord} isLoading={loading} disabled={loading} >Search</Button>
     </div>
       
   )
