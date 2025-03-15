@@ -23,25 +23,39 @@ function App() {
       setLoading(false)
     }
 
-    
+
   }
 
   return (
-    <div>
-    <h1>Dictionary App</h1>
+    <div className='dictionary'>
+      <div className="home-page">
+        <h1> free online Dictionary App </h1>
+        <p> developed by &copy; <a href="www.linkedin.com/in/mosesmbuthia">Moses Mbuthia</a></p>
+        <p>Type a word to find its meaning</p>
+        <TextInput onChange={e => setWord(e.target.value)} value={word} placeholder='Enter a word to search' />
 
-    <TextInput onChange={e => setWord(e.target.value)} value={word} placeholder='Enter a word to search'/>
+        <Button
+          backgroundColor='red'
+          fontSize='12px'
+          fontWeight='600'
 
-      <Button 
-      appearance='primary' 
-      onClick={searchWord} 
-      isLoading={loading} 
-      disabled={loading} >Search</Button>
+          appearance='primary'
+          onClick={searchWord}
+          isLoading={loading}
+          disabled={loading} >Search</Button>
+      </div>
 
-    {wordDetails?.meanings && (
-     <Pane>
-     <Heading>Meanings:</Heading>
-     {wordDetails.meanings.map((meaning, index) => (
+
+
+      {wordDetails?.meanings && (
+        <Pane 
+        backgroundColor="rgb(255, 237, 250)"
+        fontSize="20px"
+        width='100vh'
+        fontWeight="500"
+        >
+          <Heading>Meanings:</Heading>
+          {wordDetails.meanings.map((meaning, index) => (
             <Pane key={index}>
               <Heading>{meaning.partOfSpeech}</Heading>
               <ul>
@@ -49,16 +63,16 @@ function App() {
                   <li key={i}>{def.definition}</li>
                 ))}
               </ul>
-     
-   </Pane>
-     ))}
-    </Pane>
-  
-  )}
 
-   
+            </Pane>
+          ))}
+        </Pane>
+
+      )}
+
+
     </div>
-      
+
   )
 }
 

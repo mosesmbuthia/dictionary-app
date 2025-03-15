@@ -1,0 +1,29 @@
+.dictionary {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: rgb(255, 237, 250);
+}
+
+.home-page {
+  background-color: rgb(56,8,79);
+  width: 100%;
+  color: wheat;
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.home-page p {
+  margin: 1.5rem 0;
+  font-size: 2rem;
+  text-transform: capitalize;
+}
+
+.home-page h1 {
+  text-transform: uppercase;
+}
+.home-page p a {
+  color: white;
+}
+
