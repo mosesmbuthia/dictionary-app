@@ -1,11 +1,29 @@
 
+import { useState } from 'react'
 import './App.css'
+import { Button, TextInput } from "evergreen-ui"
+
 
 function App() {
+  const [word, setWord] = useState("")
+  const [loading, setLoading] = useState("false")
+  const searchWord = async () => {
+    try {
+
+    } catch (e) {
+      console.error(e);
+    }
+
+    
+  }
 
   return (
     <div>
     <h1>This is the start</h1>
+
+    <TextInput onChange={e => setWord(e.target.value)} value={word} placeholder='Enter a word to search'/>
+
+      <Button appearance='primary' onClick={searchWord} >Search</Button>
     </div>
       
   )
